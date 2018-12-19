@@ -28,5 +28,5 @@ public class RobotMap {
   //Noah's playground code
     
   public static int A_button = 0;
-  public static int JoystickPort = 0;
+  public static int JoystickPort = 1;
 }
