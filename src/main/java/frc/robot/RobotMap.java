@@ -27,6 +27,25 @@ public class RobotMap {
 
   //Noah's playground code
     
-  public static int A_button = 0;
-  public static int JoystickPort = 1;
+  public static int A_button = 1;
+  public static int JoystickPort = 0;
+  //drive train
+  public static int LB = 12;
+  public static int RB = 15;
+  public static int RF = 17;
+  public static int LF = 13;
+  //////Sensors/////
+  //Encoders
+  public static int EncoderLeft = 12;
+  public static int EncoderRight = 15;
+
+  //PigeonController
+  public static int PigImu = 17;
+  //Gyro
+  public static int GyroID = 0;
+  //RangeFinder
+  public static int RangeID = 0;
+
+  
+
 }

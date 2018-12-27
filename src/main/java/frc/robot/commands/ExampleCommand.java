@@ -7,6 +7,9 @@
 
 package frc.robot.commands;
 
+import java.io.Console;
+import java.io.OutputStream;
+
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
@@ -16,7 +19,7 @@ import frc.robot.Robot;
 public class ExampleCommand extends Command {
   public ExampleCommand() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_subsystem);
+    requires(Robot.m_drivetrain);
   }
 
   // Called just before this Command runs the first time
@@ -27,6 +30,7 @@ public class ExampleCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    Robot.m_drivetrain.drive(.25, .25);
   }
 
   // Make this return true when this Command no longer needs to run execute()

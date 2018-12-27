@@ -7,7 +7,7 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.TimedRobot;
+//import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
+import edu.wpi.first.wpilibj.IterativeRobot;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -23,12 +24,12 @@ import frc.robot.subsystems.ExampleSubsystem;
  * creating this project, you must also update the build.gradle file in the
  * project.
  */
-public class Robot extends TimedRobot {
+public class Robot extends IterativeRobot {
   public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static DriveTrain m_drivetrain = new DriveTrain();
   public static OI m_oi;
 
-  Command m_autonomousCommand;
+  Command m_autonomousCommand = null;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   /**
@@ -38,7 +39,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
-    m_chooser.addDefault("Default Auto", new ExampleCommand());
+    //m_chooser.addDefault("Default Auto", new ExampleCommand());
     // chooser.addObject("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
   }
@@ -51,23 +52,23 @@ public class Robot extends TimedRobot {
    * <p>This runs after the mode specific periodic functions, but before
    * LiveWindow and SmartDashboard integrated updating.
    */
-  @Override
-  public void robotPeriodic() {
-  }
+  //@Override
+  //public void robotPeriodic() {
+  //}
 
   /**
    * This function is called once each time the robot enters Disabled mode.
    * You can use it to reset any subsystem information you want to clear when
    * the robot is disabled.
    */
-  @Override
-  public void disabledInit() {
-  }
+  //@Override
+  //public void disabledInit() {
+  //}
 
-  @Override
-  public void disabledPeriodic() {
-    Scheduler.getInstance().run();
-  }
+  //@Override
+  //public void disabledPeriodic() {
+    //Scheduler.getInstance().run();
+  //}
 
   /**
    * This autonomous (along with the chooser code above) shows how to select
@@ -82,7 +83,7 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_chooser.getSelected();
+    //m_autonomousCommand = m_chooser.getSelected();
 
     /*
      * String autoSelected = SmartDashboard.getString("Auto Selector",
